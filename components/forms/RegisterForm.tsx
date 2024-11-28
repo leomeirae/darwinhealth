@@ -19,6 +19,7 @@ import {
 } from "@/constants";
 import { registerPatient } from "@/lib/actions/patient.actions";
 import { PatientFormValidation } from "@/lib/validation";
+import { User } from "@/types";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "react-phone-number-input/style.css";

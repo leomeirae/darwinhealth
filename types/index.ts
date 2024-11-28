@@ -12,8 +12,11 @@ export interface CreateUserParams {
   name: string;
 }
 
-export interface User extends CreateUserParams {
+export interface User {
   $id: string;
+  email: string;
+  phone: string;
+  name: string;
 }
 
 export interface RegisterUserParams {
@@ -38,6 +41,7 @@ export interface CreateAppointmentParams {
 export interface UpdateAppointmentParams {
   userId: string;
   appointmentId: string;
+  timeZone: string;
   appointment: {
     primaryPhysician: string;
     schedule: Date;

@@ -1,8 +1,9 @@
-export const GenderOptions = ["male", "female", "other"];
+import { Gender } from "@/types";
+
+export const GenderOptions = ["male", "female", "other"] as const;
 
 export const PatientFormDefaultValues = {
-  firstName: "",
-  lastName: "",
+  name: "",
   email: "",
   phone: "",
   birthDate: new Date(Date.now()),
@@ -18,9 +19,9 @@ export const PatientFormDefaultValues = {
   currentMedication: "",
   familyMedicalHistory: "",
   pastMedicalHistory: "",
-  identificationType: "Birth Certificate",
+  identificationType: "",
   identificationNumber: "",
-  identificationDocument: [],
+  identificationDocument: undefined,
   treatmentConsent: false,
   disclosureConsent: false,
   privacyConsent: false,

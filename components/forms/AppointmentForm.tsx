@@ -14,7 +14,7 @@ import {
   updateAppointment,
 } from "@/lib/actions/appointment.actions";
 import { getAppointmentSchema } from "@/lib/validation";
-import { Status } from "@/types";
+import { Status, UpdateAppointmentParams } from "@/types";
 import { Appointment } from "@/types/appwrite.types";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -59,6 +59,7 @@ export const AppointmentForm = ({
   ) => {
     setIsLoading(true);
 
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     let status;
     switch (type) {
       case "schedule":
@@ -92,9 +93,10 @@ export const AppointmentForm = ({
           );
         }
       } else {
-        const appointmentToUpdate = {
+        const appointmentToUpdate: UpdateAppointmentParams = {
           userId,
           appointmentId: appointment?.$id!,
+          timeZone,
           appointment: {
             primaryPhysician: values.primaryPhysician,
             schedule: new Date(values.schedule),
