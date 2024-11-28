@@ -12,9 +12,9 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "CarePulse",
+  title: "Darwin Health",
   description:
-    "A healthcare patient management System designed to streamline patient registration, appointment scheduling, and medical records management for healthcare providers.",
+    "Um sistema de gerenciamento de pacientes em saúde projetado para simplificar o registro de pacientes, o agendamento de consultas e a gestão de prontuários médicos para prestadores de serviços de saúde.",
   icons: {
     icon: "/assets/icons/logo-icon.svg",
   },

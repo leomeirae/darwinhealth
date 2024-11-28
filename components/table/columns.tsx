@@ -19,7 +19,7 @@ export const columns: ColumnDef<Appointment>[] = [
   },
   {
     accessorKey: "patient",
-    header: "Patient",
+    header: "Paciente",
     cell: ({ row }) => {
       const appointment = row.original;
       return <p className="text-14-medium ">{appointment.patient.name}</p>;
@@ -39,7 +39,7 @@ export const columns: ColumnDef<Appointment>[] = [
   },
   {
     accessorKey: "schedule",
-    header: "Appointment",
+    header: "Consulta",
     cell: ({ row }) => {
       const appointment = row.original;
       return (
@@ -51,7 +51,7 @@ export const columns: ColumnDef<Appointment>[] = [
   },
   {
     accessorKey: "primaryPhysician",
-    header: "Doctor",
+    header: "Médico",
     cell: ({ row }) => {
       const appointment = row.original;
 
@@ -63,7 +63,7 @@ export const columns: ColumnDef<Appointment>[] = [
         <div className="flex items-center gap-3">
           <Image
             src={doctor?.image!}
-            alt="doctor"
+            alt="médico"
             width={100}
             height={100}
             className="size-8"
@@ -75,7 +75,7 @@ export const columns: ColumnDef<Appointment>[] = [
   },
   {
     id: "actions",
-    header: () => <div className="pl-4">Actions</div>,
+    header: () => <div className="pl-4">Ações</div>,
     cell: ({ row }) => {
       const appointment = row.original;
 
@@ -86,16 +86,16 @@ export const columns: ColumnDef<Appointment>[] = [
             userId={appointment.userId}
             appointment={appointment}
             type="schedule"
-            title="Schedule Appointment"
-            description="Please confirm the following details to schedule."
+            title="Agendar Consulta"
+            description="Por favor, confirme os seguintes detalhes para agendar."
           />
           <AppointmentModal
             patientId={appointment.patient.$id}
             userId={appointment.userId}
             appointment={appointment}
             type="cancel"
-            title="Cancel Appointment"
-            description="Are you sure you want to cancel your appointment?"
+            title="Cancelar Consulta"
+            description="Tem certeza que deseja cancelar sua consulta?"
           />
         </div>
       );

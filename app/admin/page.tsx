@@ -9,6 +9,13 @@ import { getRecentAppointmentList } from "@/lib/actions/appointment.actions";
 const AdminPage = async () => {
   const appointments = await getRecentAppointmentList();
 
+  const stats = {
+    scheduledCount: appointments?.scheduledCount ?? 0,
+    pendingCount: appointments?.pendingCount ?? 0,
+    cancelledCount: appointments?.cancelledCount ?? 0,
+    documents: appointments?.documents ?? [],
+  };
+
   return (
     <div className="mx-auto flex max-w-7xl flex-col space-y-14">
       <header className="admin-header">
@@ -27,34 +34,34 @@ const AdminPage = async () => {
 
       <main className="admin-main">
         <section className="w-full space-y-4">
-          <h1 className="header">Welcome 👋</h1>
+          <h1 className="header">Bem-vindo 👋</h1>
           <p className="text-dark-700">
-            Start the day with managing new appointments
+            Comece o dia gerenciando novos agendamentos
           </p>
         </section>
 
         <section className="admin-stat">
           <StatCard
             type="appointments"
-            count={appointments.scheduledCount}
+            count={stats.scheduledCount}
             label="Scheduled appointments"
             icon={"/assets/icons/appointments.svg"}
           />
           <StatCard
             type="pending"
-            count={appointments.pendingCount}
+            count={stats.pendingCount}
             label="Pending appointments"
             icon={"/assets/icons/pending.svg"}
           />
           <StatCard
             type="cancelled"
-            count={appointments.cancelledCount}
+            count={stats.cancelledCount}
             label="Cancelled appointments"
             icon={"/assets/icons/cancelled.svg"}
           />
         </section>
 
-        <DataTable columns={columns} data={appointments.documents} />
+        <DataTable columns={columns} data={stats.documents} />
       </main>
     </div>
   );

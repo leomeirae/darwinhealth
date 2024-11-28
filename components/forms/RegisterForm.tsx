@@ -104,13 +104,15 @@ const RegisterForm = ({ user }: { user: User }) => {
         className="flex-1 space-y-12"
       >
         <section className="space-y-4">
-          <h1 className="header">Welcome 👋</h1>
-          <p className="text-dark-700">Let us know more about yourself.</p>
+          <h1 className="header">Bem-vindo 👋</h1>
+          <p className="text-dark-700">
+            Queremos conhecer um pouco mais sobre você.
+          </p>
         </section>
 
         <section className="space-y-6">
           <div className="mb-9 space-y-1">
-            <h2 className="sub-header">Personal Information</h2>
+            <h2 className="sub-header">Informações pessoais</h2>
           </div>
 
           {/* NAME */}
@@ -119,7 +121,8 @@ const RegisterForm = ({ user }: { user: User }) => {
             fieldType={FormFieldType.INPUT}
             control={form.control}
             name="name"
-            placeholder="John Doe"
+            label="Nome completo"
+            placeholder="João da Silva"
             iconSrc="/assets/icons/user.svg"
             iconAlt="user"
           />
@@ -130,8 +133,8 @@ const RegisterForm = ({ user }: { user: User }) => {
               fieldType={FormFieldType.INPUT}
               control={form.control}
               name="email"
-              label="Email address"
-              placeholder="johndoe@gmail.com"
+              label="Email"
+              placeholder="joaodasilva@gmail.com"
               iconSrc="/assets/icons/email.svg"
               iconAlt="email"
             />
@@ -140,8 +143,8 @@ const RegisterForm = ({ user }: { user: User }) => {
               fieldType={FormFieldType.PHONE_INPUT}
               control={form.control}
               name="phone"
-              label="Phone Number"
-              placeholder="(555) 123-4567"
+              label="Telefone"
+              placeholder="(11) 99999-9999"
             />
           </div>
 
@@ -151,14 +154,14 @@ const RegisterForm = ({ user }: { user: User }) => {
               fieldType={FormFieldType.DATE_PICKER}
               control={form.control}
               name="birthDate"
-              label="Date of birth"
+              label="Data de Nascimento"
             />
 
             <CustomFormField
               fieldType={FormFieldType.SKELETON}
               control={form.control}
               name="gender"
-              label="Gender"
+              label="Gênero"
               renderSkeleton={(field) => (
                 <FormControl>
                   <RadioGroup
@@ -186,16 +189,16 @@ const RegisterForm = ({ user }: { user: User }) => {
               fieldType={FormFieldType.INPUT}
               control={form.control}
               name="address"
-              label="Address"
-              placeholder="14 street, New york, NY - 5101"
+              label="Endereço"
+              placeholder="Rua Amarela, 0 - São Paulo, SP - 00000"
             />
 
             <CustomFormField
               fieldType={FormFieldType.INPUT}
               control={form.control}
               name="occupation"
-              label="Occupation"
-              placeholder=" Software Engineer"
+              label="Ocupação"
+              placeholder="Engenheiro"
             />
           </div>
 
@@ -205,16 +208,16 @@ const RegisterForm = ({ user }: { user: User }) => {
               fieldType={FormFieldType.INPUT}
               control={form.control}
               name="emergencyContactName"
-              label="Emergency contact name"
-              placeholder="Guardian's name"
+              label="Nome do contato de emergência"
+              placeholder="Nome do responsável"
             />
 
             <CustomFormField
               fieldType={FormFieldType.PHONE_INPUT}
               control={form.control}
               name="emergencyContactNumber"
-              label="Emergency contact number"
-              placeholder="(555) 123-4567"
+              label="Telefone do contato de emergência"
+              placeholder="(11) 99999-9999"
             />
           </div>
         </section>
@@ -229,8 +232,8 @@ const RegisterForm = ({ user }: { user: User }) => {
             fieldType={FormFieldType.SELECT}
             control={form.control}
             name="primaryPhysician"
-            label="Primary care physician"
-            placeholder="Select a physician"
+            label="Médico Responsável"
+            placeholder="Selecione um médico"
           >
             {Doctors.map((doctor, i) => (
               <SelectItem key={doctor.name + i} value={doctor.name}>

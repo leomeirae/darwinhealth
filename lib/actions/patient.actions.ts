@@ -12,6 +12,7 @@ import {
   storage,
   users,
 } from "../appwrite.config";
+import { CreateUserParams, RegisterUserParams } from "../types";
 import { parseStringify } from "../utils";
 
 // CREATE APPWRITE USER

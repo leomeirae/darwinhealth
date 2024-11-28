@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { ID, Query } from "node-appwrite";
 
+import { CreateAppointmentParams, UpdateAppointmentParams } from "@/types";
 import { Appointment } from "@/types/appwrite.types";
 
 import {
