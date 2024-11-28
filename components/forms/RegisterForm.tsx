@@ -71,7 +71,7 @@ const RegisterForm = ({ user }: { user: User }) => {
         emergencyContactName: values.emergencyContactName,
         emergencyContactNumber: values.emergencyContactNumber,
         primaryPhysician: values.primaryPhysician,
-        insuranceProvider: values.insuranceProvider,
+        planoSaude: values.planoSaude,
         insurancePolicyNumber: values.insurancePolicyNumber,
         allergies: values.allergies,
         currentMedication: values.currentMedication,
@@ -253,8 +253,8 @@ const RegisterForm = ({ user }: { user: User }) => {
             <CustomFormField
               fieldType={FormFieldType.INPUT}
               control={form.control}
-              name="insuranceProvider"
-              label="Insurance provider"
+              name="planoSaude"
+              label="Plano de Saúde"
               placeholder="BlueCross BlueShield"
             />
 
