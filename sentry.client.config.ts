@@ -8,21 +8,14 @@ Sentry.init({
   dsn: "https://65dee55a4b2c9d3e652af827f8e98c4f@o4508376237867008.ingest.de.sentry.io/4508377965461584",
 
   // Add optional integrations for additional features
-  integrations: [
-    Sentry.replayIntegration(),
-  ],
+  integrations: [Sentry.replayIntegration()],
 
-  // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
-  tracesSampleRate: 1,
-
-  // Define how likely Replay events are sampled.
-  // This sets the sample rate to be 10%. You may want this to be 100% while
-  // in development and sample at a lower rate in production
+  // Define how likely traces are sampled
+  tracesSampleRate: 1.0,
   replaysSessionSampleRate: 0.1,
-
-  // Define how likely Replay events are sampled when an error occurs.
   replaysOnErrorSampleRate: 1.0,
 
-  // Setting this option to true will print useful information to the console while you're setting up Sentry.
+  // Configurações de ambiente
   debug: false,
+  enabled: process.env.NODE_ENV === "production",
 });
