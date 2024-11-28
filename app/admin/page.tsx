@@ -29,7 +29,7 @@ const AdminPage = async () => {
           />
         </Link>
 
-        <p className="text-16-semibold">Admin Dashboard</p>
+        <p className="text-16-semibold">Painel de Adm.</p>
       </header>
 
       <main className="admin-main">
@@ -44,19 +44,19 @@ const AdminPage = async () => {
           <StatCard
             type="appointments"
             count={stats.scheduledCount}
-            label="Scheduled appointments"
+            label="Consultas agendadas"
             icon={"/assets/icons/appointments.svg"}
           />
           <StatCard
             type="pending"
             count={stats.pendingCount}
-            label="Pending appointments"
+            label="Consultas pendentes"
             icon={"/assets/icons/pending.svg"}
           />
           <StatCard
             type="cancelled"
             count={stats.cancelledCount}
-            label="Cancelled appointments"
+            label="Consultas canceladas"
             icon={"/assets/icons/cancelled.svg"}
           />
         </section>
